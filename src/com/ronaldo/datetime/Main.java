@@ -16,6 +16,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		DateTimeFormatter format2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 		
 		LocalDate date01 = LocalDate.now(); System.out.println("local Date: "+date01 );
 		LocalDateTime date02 = LocalDateTime.now(); System.out.println("local Date Time: "+date02 );
@@ -24,7 +25,9 @@ public class Main {
 		LocalDateTime date05 = LocalDateTime.parse("2022-11-14T01:30:26");System.out.println("Local Date Time a partir de texto "+date05);
 		Instant date06 = Instant.parse("2022-11-14T01:30:26Z");System.out.println("Instant a partir de texto "+date06);
 		Instant date07 = Instant.parse("2022-11-14T01:30:26-03:00");System.out.println("Instant a partir de texto GMT "+date07);
-		LocalDate date08 = LocalDate.parse("14/11/2022", format1);System.out.println(date08);
+		LocalDate date08 = LocalDate.parse("14/11/2022", format1);System.out.println("Formatter: "+date08);
+		LocalDateTime date09 = LocalDateTime.parse("14/11/2022 20:28", format2);System.out.println("Formatter hora: "+date09);
+		LocalDate date10 = LocalDate.of(2022, 7, 20);System.out.println("Data Inteira: "+date10);
 		
 	}
 
