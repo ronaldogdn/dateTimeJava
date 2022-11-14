@@ -28,6 +28,7 @@ public class Main {
 		LocalDate date08 = LocalDate.parse("14/11/2022", format1);System.out.println("Formatter: "+date08);
 		LocalDateTime date09 = LocalDateTime.parse("14/11/2022 20:28", format2);System.out.println("Formatter hora: "+date09);
 		LocalDate date10 = LocalDate.of(2022, 7, 20);System.out.println("Data Inteira: "+date10);
+		LocalDateTime date11 = LocalDateTime.of(2022, 7, 20, 1, 30);System.out.println("Data e Hora Inteira: "+date11);
 		
 	}
 
