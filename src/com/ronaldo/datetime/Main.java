@@ -6,6 +6,7 @@ package com.ronaldo.datetime;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -20,6 +21,9 @@ public class Main {
 		
 		DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		DateTimeFormatter format2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+		DateTimeFormatter format3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault());
+		DateTimeFormatter format4 = DateTimeFormatter.ISO_DATE_TIME;
+		DateTimeFormatter format5 = DateTimeFormatter.ISO_INSTANT;
 		
 		LocalDate date01 = LocalDate.now(); System.out.println("local Date: "+date01 );
 		LocalDateTime date02 = LocalDateTime.now(); System.out.println("local Date Time: "+date02 );
@@ -41,7 +45,9 @@ public class Main {
 		System.out.println("date04 "+date04.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
 		System.out.println("date05 "+date05.format(format1));
 		System.out.println("date05 "+date05.format(format2));
-		
+		System.err.println("Instant date06: "+format3.format(date06));
+		System.out.println("date05: "+date05.format(format4));
+		System.out.println("date06: "+format5.format(date06));		
 	}
 
 }
