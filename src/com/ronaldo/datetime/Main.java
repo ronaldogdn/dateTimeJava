@@ -13,6 +13,9 @@ import java.time.format.DateTimeFormatter;
  * Esse é um treinamento do professor Nélio Alves sobre data e hora no Java
  */
 public class Main {
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 		DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -29,6 +32,15 @@ public class Main {
 		LocalDateTime date09 = LocalDateTime.parse("14/11/2022 20:28", format2);System.out.println("Formatter hora: "+date09);
 		LocalDate date10 = LocalDate.of(2022, 7, 20);System.out.println("Data Inteira: "+date10);
 		LocalDateTime date11 = LocalDateTime.of(2022, 7, 20, 1, 30);System.out.println("Data e Hora Inteira: "+date11);
+		//transformar para texto
+		System.out.print("Formatter direto: date04.format(format1): ");
+		System.out.println(date04.format(format1));
+		System.out.print("format1.format(date04) : ");
+		System.out.println(format1.format(date04));
+		System.out.println("date 04 Chamando direto no param");
+		System.out.println("date04 "+date04.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+		System.out.println("date05 "+date05.format(format1));
+		System.out.println("date05 "+date05.format(format2));
 		
 	}
 
