@@ -47,7 +47,31 @@ public class Main {
 		System.out.println("date05 "+date05.format(format2));
 		System.err.println("Instant date06: "+format3.format(date06));
 		System.out.println("date05: "+date05.format(format4));
-		System.out.println("date06: "+format5.format(date06));		
+		System.out.println("date06: "+format5.format(date06));	
+		//Global para local
+		LocalDate result1 =  LocalDate.ofInstant(date06, ZoneId.systemDefault());
+		LocalDate result2 =  LocalDate.ofInstant(date06,ZoneId.of("Portugal"));
+		LocalDateTime result3 =  LocalDateTime.ofInstant(date06, ZoneId.systemDefault());
+		LocalDateTime result4 =  LocalDateTime.ofInstant(date06,ZoneId.of("Portugal"));
+		
+		System.out.println("Global para local");
+		System.out.println("Local: "+result1);
+		System.out.println("Portugal: "+result2);
+		System.out.println("LocalDateTime: "+result3);
+		System.out.println("LocalDateTime Portugal: "+result4);
+		System.out.println("pegar o dia da data");
+		System.out.println(date04.getDayOfMonth());
+		System.out.println("pegar o mês da data");
+		System.out.println(date04.getMonthValue());
+		System.out.println("pegar o ano da data");
+		System.out.println(date04.getYear());
+		System.out.println("pegar a hora da data");
+		System.out.println(date05.getHour());
+		System.out.println("pegar o minuto da data");
+		System.out.println(date05.getMinute());
+		System.out.println("pegar o segundo da data");
+		System.out.println(date05.getSecond());
+		
 	}
 
 }
