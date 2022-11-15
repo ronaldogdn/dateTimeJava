@@ -3,11 +3,13 @@
  */
 package com.ronaldo.datetime;
 
+import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 
 /**
  * @author Ronaldo Gomes do Nascimento
@@ -72,6 +74,30 @@ public class Main {
 		System.out.println("pegar o segundo da data");
 		System.out.println(date05.getSecond());
 		
+		//calculos com data
+		System.out.println("Cálculo com datas");
+		LocalDate pastWeekLocalDate = date04.minusDays(7);
+		LocalDate nextWeekLocalDate = date04.plusDays(7);
+		System.out.println("pastWeekLocalDate: "+pastWeekLocalDate);
+		System.out.println("nextWeekLocalDate: "+nextWeekLocalDate);
+		LocalDateTime pastWeekLocalDateTime = date05.minusDays(7);
+		LocalDateTime nextWeekLocalDateTime = date05.plusDays(7);
+		System.out.println("pastWeekLocalDateTime: "+pastWeekLocalDateTime);
+		System.out.println("nextWeekLocalDateTime: "+nextWeekLocalDateTime);
+		
+		Instant pastWeekInstant = date06.minus(7,ChronoUnit.DAYS);
+		Instant nextWeekInstant = date06.plus(7,ChronoUnit.DAYS);
+		System.out.println("pastWeekInstant: "+pastWeekInstant);
+		System.out.println("nextWeekInstant: "+nextWeekInstant);
+		//duração 
+		Duration t1 = Duration.between(pastWeekLocalDateTime, date05);
+		System.out.println("t1 dias = "+t1.toDays());
+		System.out.println("Quando a data não tem minutos e segundos");
+		//força a data a iniciar a partir da 00:00
+		Duration t2 = Duration.between(pastWeekLocalDate.atStartOfDay(), date04.atStartOfDay());
+		System.out.println("t2 dias = "+t2.toDays());
+		Duration t3 = Duration.between(pastWeekInstant, date06);
+		System.out.println("t3 dias = "+t3.toDays());
 	}
 
 }
